@@ -1,18 +1,18 @@
 {% set name = "multi_rake" %}
-{% set version = "0.0.1" %}
+{% set version = "0.0.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 885ab2fd795cb96015aa552f22b35b8ae9065ae2d2d5c1af42a1bb32e081bec4
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 14bcf5febde321b62829ec0ba3f4a49615112d88c952d86f0ab53c0d5fdd7440
 
 build:
   noarch: python
-  number: 1
-  script: "{{ PYTHON }} -m pip install . -vv"
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
@@ -30,12 +30,12 @@ test:
     - multi_rake
 
 about:
-  home: "https://github.com/vgrabovets/multi_rake"
+  home: https://github.com/vgrabovets/multi_rake
   license: MIT
   license_family: MIT
   license_file: LICENSE
-  summary: "Multilingual Rapid Keyword Extraction (RAKE)"
-  dev_url: "https://github.com/vgrabovets/multi_rake"
+  summary: Multilingual Rapid Keyword Extraction (RAKE)
+  dev_url: https://github.com/vgrabovets/multi_rake
 
 extra:
   recipe-maintainers:
